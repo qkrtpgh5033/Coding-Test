@@ -1,4 +1,4 @@
-class Level_1_5 {
+class Lelvel_1_5 {
     public String solution(String phone_number) {
         //핸드폰 번호 가리기
 
