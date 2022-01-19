@@ -2,8 +2,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-class Level_1-7 {
+class Level_1_7 {
     public long solution(long n) {
+        //정수 내림차순으로 배치하기
 
         String str = Long.toString(n);
         Integer [] arr = new Integer[str.length()];
