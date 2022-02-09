@@ -3,38 +3,40 @@ import java.util.*;
 class Level_1_15 {
     public int[] solution(int[] numbers) {
 
-        ArrayList <Integer> resulte_list = new ArrayList<>();
+
+        // 두개 뽑아서 더하기
+
+        HashSet<Integer> set = new HashSet<>();
 
         // 모든 수 저장
         for(int i = 0; i < numbers.length-1; i++)
         {
             for(int j = i+1; j < numbers.length; j++)
             {
-
                 int result = numbers[i] + numbers[j];
-                resulte_list.add(result);
-
+                set.add(result);
             }
         }
 
+
+//         Iterator iter = set.iterator();
+
+//         while(iter.hasNest())
+//         {
+//             list.add(iter.next());
+//         }
+
+        ArrayList <Integer> list = new ArrayList<>(set);
         //정렬
-        Collections.sort(resulte_list);
+        Collections.sort(list);
 
-        //중복제거
-        for(int i = 0; i < resulte_list.size()-1; i++)
-        {
-            if(resulte_list.get(i) - resulte_list.get(i+1) == 0)
-            {
-                resulte_list.remove(i);
-                i--;
-            }
-        }
+
 
         // 리턴
-        int[] answer = new int[resulte_list.size()];
-        for(int i = 0; i < resulte_list.size(); i++)
+        int[] answer = new int[list.size()];
+        for(int i = 0; i < list.size(); i++)
         {
-            answer[i] = resulte_list.get(i);
+            answer[i] = list.get(i);
         }
 
         return answer;
