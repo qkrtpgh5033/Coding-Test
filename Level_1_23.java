@@ -2,7 +2,7 @@ import java.util.*;
 class Level_1_23 {
     public int solution(int[] nums) {
 
-        //폰켓몬 ArrayList 풀이
+        // 폰켓몬 (ArrayList 풀이)
         Arrays.sort(nums);
         ArrayList<Integer> list = new ArrayList<>();
 
