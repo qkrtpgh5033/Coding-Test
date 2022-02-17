@@ -2,23 +2,22 @@ import java.util.*;
 class Level_1_23 {
     public int solution(int[] nums) {
 
-        // 폰켓몬 (ArrayList 풀이)
+        // 폰켓몬 (Set 풀이)
         Arrays.sort(nums);
-        ArrayList<Integer> list = new ArrayList<>();
+        HashSet<Integer> set = new HashSet<>();
 
         for(int i : nums)
         {
-            if(!list.contains(i)) // 핵심
-                list.add(i);
+            set.add(i);
         }
 
         int selectLen = nums.length / 2;
 
 
-        if(list.size() >= selectLen)
+        if(set.size() >= selectLen)
             return selectLen;
         else
-            return list.size();
+            return set.size();
 
 
     }
