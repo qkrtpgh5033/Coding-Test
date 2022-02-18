@@ -2,8 +2,7 @@ import java.util.*;
 class Level_1_25 {
     public int solution(int[][] board, int[] moves) {
 
-        //크레인 인형뽑기 게임
-        int top = 0;
+        //크레인 인형뽑기 게임 (코드 간결화)
         int answer = 0;
         Stack <Integer> stack = new Stack<>();
 
@@ -14,38 +13,41 @@ class Level_1_25 {
         }
 
         //인형 뽑기
-        for(int i = 0; i < moves.length; i++)
+        for(int i : moves)
         {
-            boolean flag = false;
-            int col = moves[i];
-
-            if(stack.size() >0)
-                top = stack.peek();
 
             for(int j = 0; j < board.length; j++)
             {
 
-                if(board[j][col] > 0)
+                if(board[j][i] > 0)
                 {
-                    stack.push(board[j][col]);
-                    board[j][col] = 0;
-                    flag = true;
+
+                    // 스택에 값 존재 x
+                    if(stack.isEmpty())
+                    {
+                        stack.push(board[j][i]);
+
+                    }
+                    //스택 값 존재
+                    else
+                    {
+                        int top = stack.peek();
+                        int now = board[j][i];
+
+                        if(top == now)
+                        {
+                            stack.pop();
+                            answer+=2;
+                        }
+                        else
+                            stack.push(now);
+                    }
+
+                    board[j][i] = 0;
                     break;
                 }
             }
 
-            if(flag)
-            {
-                int now = stack.peek();
-
-                if(top == now)
-                {
-                    stack.pop();
-                    stack.pop();
-                    answer+=2;
-                }
-
-            }
 
         }
         return answer;
