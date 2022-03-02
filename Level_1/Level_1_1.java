@@ -26,8 +26,7 @@ class Level_1_1 {
             answer[i] = arr[num];
 
         }
-
-
+       
 
         return answer;
     }
