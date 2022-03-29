@@ -60,7 +60,7 @@ public class Problem01_05 {
                 rt--;
             }
         }
-        String s = String.valueOf(arr);
+//        String s = String.valueOf(arr);
         System.out.println(s);
 
     }
