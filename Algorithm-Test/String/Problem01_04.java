@@ -9,6 +9,9 @@ public class Problem01_04 {
     {
         ArrayList<String> list = new ArrayList<>();
 
+
+//        String reverse_str = new StringBuilder(s).reverse().toString();
+
 //        for(String s : str) // 함수 사용
 //        {
 //            String reverse_str = new StringBuilder(s).reverse().toString();
@@ -18,8 +21,8 @@ public class Problem01_04 {
         for(String s : str) // 알고리즘 사용 (일일히 뒤집기)
         {
             char[] ch = s.toCharArray();
-            int lt = 0;
-            int rt = ch.length-1;
+            int lt = 0;//시작 포인트
+            int rt = ch.length-1; //마지막 포인트
 
             while(lt < rt)
             {
@@ -30,6 +33,7 @@ public class Problem01_04 {
                 lt++;
                 rt--;
             }
+
 
             String reverse_str = String.valueOf(ch);
             list.add(reverse_str);
