@@ -1,11 +1,9 @@
 package StackAndQueue;
 
-import java.util.Collections;
 import java.util.Scanner;
 import java.util.Stack;
-import java.util.TreeSet;
 
-public class Main {
+public class Problem05_01 {
 
 
     public void solution(String str)
@@ -64,7 +62,7 @@ public class Main {
 
     public static void main(String[] args){
 
-        Main T = new Main();
+        Problem05_01 T = new Problem05_01();
         Scanner sc = new Scanner(System.in);
 
         String str = sc.next();
