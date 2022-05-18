@@ -19,16 +19,11 @@ public class Problem05_03 {
                 int draw = board[j][col - 1]; // 뽑기
 
                 if(draw != 0){
-//                    System.out.println("draw = " + draw);
                     board[j][col-1] = 0;
 
                     if(!stack.isEmpty()){
                         int peek = stack.peek();
                         if(peek == draw){
-//                            System.out.println("걸림");
-//                            System.out.println("peek = " + stack.peek());
-//                            System.out.println("i = " + i);
-//                            System.out.println("move[i] = " + move[i]);
                             stack.pop();
                             answer += 2;
                         }
