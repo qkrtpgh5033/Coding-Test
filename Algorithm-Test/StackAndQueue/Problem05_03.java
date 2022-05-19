@@ -16,7 +16,7 @@ public class Problem05_03 {
 
             for(int j = 0; j < board.length; j++){
 
-                int draw = board[j][col - 1]; // 뽑기
+                int draw = board[j][col - 1];
 
                 if(draw != 0){
                     board[j][col-1] = 0;
