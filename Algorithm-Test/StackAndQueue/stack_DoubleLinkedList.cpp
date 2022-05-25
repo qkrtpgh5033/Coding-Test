@@ -10,8 +10,8 @@ void exit();
 
 struct NODE
 {
-	NODE* pre;
-	NODE* next;
+	NODE*pre;
+	NODE*next;
 
 	int number;
 };
@@ -21,12 +21,19 @@ NODE* tail;
 
 int main() {
 	int a;
-	
+	/*
 
 	head = (NODE*)malloc(sizeof(struct NODE));
 	head->next = NULL;
 	head->pre = NULL;
 	tail = head;
+	*/
+
+	head = (NODE*)malloc(sizeof(struct NODE));
+	tail = (NODE*)malloc(sizeof(struct NODE));
+	head->next = tail;
+	tail->pre = head;
+
 
 	while (true) {
 		printf("1. push \n2. pop \n3. show all nodes \n-1. exit \n > ");
@@ -72,12 +79,9 @@ void pushNode() {
 
 
 	if (isEmpty()) {
-		tail = (NODE*)malloc(sizeof(struct NODE));
-		tail->next = NULL;
+		head->next = node;
 		tail->pre = node;
 
-
-		head->next = node;
 		node->next = tail;
 		node->pre = head;
 
@@ -105,29 +109,27 @@ void showAllNodes() {
 
 void popNode() {
 
-	if (!isEmpty() && (head->next != tail)) {
-
+	if (!isEmpty()) {
 
 		NODE* prevNode = tail->pre->pre;
 		NODE* deleteNode = prevNode->next;
-		
-		printf("pop (0x%p) : %d\n", deleteNode, deleteNode->number);
-	
+//		printf("popNode Number : %d\n", prevNode->number);
 		prevNode->next = tail;
 		tail->pre = prevNode;
+
+//		printf("deleteNode Number : %d\n", deleteNode->number);
 		free(deleteNode);
-		
 	}
 	else {
 		printf("There is no Node\n");
 	}
 }
 void exit() {
-	//printf("headNumber : %d\n", head->number);
-	//printf("headAddress : %p\n", head);
-	//printf("tailNumber : %d\n", tail->number);
-	//printf("tailAddress : %p\n", tail);
-	//printf("tailPrevNumber : %d\n", tail->pre->number);
+	printf("headNumber : %d\n", head->number);
+	printf("headAddress : %p\n", head);
+	printf("tailNumber : %d\n", tail->number);
+	printf("tailAddress : %p\n", tail);
+	printf("tailPrevNumber : %d\n", tail->pre->number);
 
 
 	NODE* now = head; // 주소저장
