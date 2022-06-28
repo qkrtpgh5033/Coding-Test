@@ -30,8 +30,9 @@ public class Problem_2504 {
                 mul *= 3;
             }
             else if (ch == ')'){
-                System.out.println("str.charAt(i-1) = " + str.charAt(i - 1));
-                System.out.println("stack.peek() = " + stack.peek());
+//                System.out.println("str.charAt(i-1) = " + str.charAt(i - 1));
+//                System.out.println("stack.peek() = " + stack.peek());
+
                 if(stack.isEmpty() || stack.peek() != '('){
                     System.out.println("0");
                     return;
@@ -48,8 +49,8 @@ public class Problem_2504 {
 
             }
             else if (ch == ']') {
-                System.out.println("str.charAt(i-1) = " + str.charAt(i - 1));
-                System.out.println("stack.peek() = " + stack.peek());
+//                System.out.println("str.charAt(i-1) = " + str.charAt(i - 1));
+//                System.out.println("stack.peek() = " + stack.peek());
                 if (stack.isEmpty() || stack.peek() != '[') {
                     System.out.println("0");
                     return;
