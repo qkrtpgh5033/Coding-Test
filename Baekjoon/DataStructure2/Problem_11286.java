@@ -16,47 +16,15 @@ public class Problem_11286 {
 
     public static void main(String[] args) throws IOException {
 
-//        /**
-//         * 시간초과
-//         */
-//        PriorityQueue<Integer> q = new PriorityQueue<>();
-//        PriorityQueue<Integer> absQ = new PriorityQueue<>();
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        int size = Integer.parseInt(br.readLine());
-//
-//        for(int i = 0 ;i  < size; i++){
-//            int num = Integer.parseInt(br.readLine());
-//            if(num == 0 ){
-//                if(q.isEmpty())
-//                    System.out.println("0");
-//                else{
-//                    int peek = absQ.peek();
-//
-//                    if(q.contains(-1*peek)){
-//                        System.out.println(-peek);
-//                        q.remove(-peek);
-//
-//                    }
-//                    else{
-//                        System.out.println(peek);
-//                        q.remove(peek);
-//                    }
-//
-//                    absQ.poll();
-//                }
-//            }
-//            else {
-//                q.add(num);
-//                absQ.add(Math.abs(num));
-//            }
-//        }
+
         /**
+         * 우선순위 큐 -> compare 메서드 오버라이딩으로 우선순위를 정해줄 수 있음.
          * Comparator로 해결
          */
         PriorityQueue<Integer> q = new PriorityQueue<Integer>((o1, o2) -> {
             int absO1 = Math.abs(o1);
             int absO2 = Math.abs(o2);
-
+            // 절대값이 같으면 각 수 자체로만 비교
             return (absO1 == absO2) ? (o1 > o2 ? 1 : -1) : absO1-absO2;
 
         });
